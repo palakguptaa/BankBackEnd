@@ -24,6 +24,7 @@ public class RegisterServiceImpl implements RegisterService {
 	@Override
 	public User createUser(User user) {
 		user.setEnable(true);
+		user.setRole("user");
 		user.setSavingsAccount(savingsAccountService.createSavingsAccount());
 		return dao.save(user);
 		
